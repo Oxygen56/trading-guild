@@ -166,6 +166,14 @@ trading-guild/
 │       └── run.ts                # 4-scenario demo script
 ├── contracts/
 │   └── interfaces.ts            # Odra contract interfaces + mock client
+├── frontend/                     # Next.js 14 App Router (4 pages, 20+ components)
+│   ├── app/
+│   │   ├── page.tsx             # Dashboard (VaultOverview, AgentCards, RecentActivity)
+│   │   ├── terminal/page.tsx    # AI Chat Terminal (AgentBubble, ChatInput, AgentStatusPanel)
+│   │   ├── strategies/page.tsx  # Strategy Feed + StrategyFilter + ProgressTracker
+│   │   └── analytics/page.tsx   # PnLChart + AgentPerformanceTable + ProfitDistribution
+│   ├── components/              # 20+ components (analytics, dashboard, layout, shared, strategies, terminal)
+│   └── lib/                     # mock-data.ts, types.ts
 ├── design-spec/                  # UI design tokens and visual specification
 │   ├── DESIGN_SPEC.md           # Full design spec (5 pages, 7 components)
 │   ├── design-tokens.css        # CSS custom properties (colors, spacing, shadows, animations)
@@ -193,7 +201,7 @@ trading-guild/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/trading-guild.git
+git clone https://github.com/Oxygen56/trading-guild.git
 cd trading-guild
 
 # Install dependencies
@@ -242,16 +250,19 @@ You'll see output demonstrating:
 3. **Yield strategy** — LP provision with projected returns
 4. **Risk rejection** — High-risk token blocked by Guardian, treasury protected
 
-### Frontend
+### Run the Frontend
 
-The frontend is a Next.js 14 App Router application with 4 pages and 17 components (dark theme, emerald accent, Tailwind CSS v4). It features:
+```bash
+cd frontend
+npm install
+NEXT_PUBLIC_CASPER_USE_MOCK=true npm run dev
+```
 
-- **Dashboard** — Vault TVL, agent status cards, recent activity feed
-- **Terminal** — Chat with agents in natural language
-- **Strategies** — Browse, filter, and submit trading strategies
-- **Analytics** — PnL charts, agent performance rankings, profit distribution history
-
-> **Note:** The frontend code was built by a parallel squad agent and is being re-aggregated. The design specification (`design-spec/DESIGN_SPEC.md`) and CSS tokens (`design-spec/design-tokens.css`) are included for reconstruction. Refer to the design spec for complete component specifications, page layouts, and data flow.
+Open [http://localhost:3000](http://localhost:3000). The dashboard shows:
+- **Dashboard** (`/`) — Vault TVL, agent status cards, recent activity feed
+- **Terminal** (`/terminal`) — Chat with agents in natural language (keyword-based simulation in mock mode)
+- **Strategies** (`/strategies`) — Browse, filter, and submit trading strategies
+- **Analytics** (`/analytics`) — PnL charts, agent performance rankings, profit distribution history
 
 ### Run with Real AI (Claude API)
 

@@ -1,0 +1,42 @@
+{
+  "name": "trading-guild",
+  "version": "1.0.0",
+  "description": "Casper Autonomous Trading Guild — Multi-Agent DeFi hedge fund powered by x402 micropayments on Casper Network",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "demo": "tsx src/demo/run.ts",
+    "demo:scenario1": "tsx src/demo/run.ts --scenario arbitrage",
+    "demo:scenario2": "tsx src/demo/run.ts --scenario yield-farming",
+    "demo:scenario3": "tsx src/demo/run.ts --scenario risk-rejection",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist/"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "casper",
+    "defi",
+    "ai-agent",
+    "x402",
+    "mcp",
+    "trading",
+    "autonomous-agent",
+    "multi-agent"
+  ]
+}

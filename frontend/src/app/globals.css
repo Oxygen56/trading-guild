@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Casper Autonomous Trading Guild — Design Tokens
+   Tailwind CSS v4 Theme Configuration
+   ============================================================ */
+
+@theme {
+  /* ---- Color: Background Layers (Deep Space) ---- */
+  --color-bg-root:       #060B1A;
+  --color-bg-layer-1:    #0A1128;
+  --color-bg-layer-2:    #0F1A36;
+  --color-bg-card:       #111D3A;
+  --color-bg-card-hover: #162244;
+  --color-bg-input:      #0A1128;
+  --color-bg-modal:      #0F1A36;
+
+  /* ---- Color: Accent (Casper Green) ---- */
+  --color-accent:         #00E5A0;
+  --color-accent-hover:   #00C48C;
+  --color-accent-muted:   rgba(0, 229, 160, 0.12);
+  --color-accent-glow:    rgba(0, 229, 160, 0.20);
+
+  /* ---- Color: Agent Identity ---- */
+  --color-agent-strategy:  #6366F1;
+  --color-agent-risk:      #F59E0B;
+  --color-agent-execution: #06B6D4;
+  --color-agent-strategy-muted:  rgba(99, 102, 241, 0.15);
+  --color-agent-risk-muted:      rgba(245, 158, 11, 0.15);
+  --color-agent-execution-muted: rgba(6, 182, 212, 0.15);
+
+  /* ---- Color: Semantic ---- */
+  --color-profit:     #10B981;
+  --color-loss:       #EF4444;
+  --color-warning:    #F59E0B;
+  --color-info:       #3B82F6;
+  --color-success:    #10B981;
+  --color-error:      #EF4444;
+
+  /* ---- Color: Text ---- */
+  --color-text-primary:   #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary:  #64748B;
+  --color-text-on-accent: #060B1A;
+
+  /* ---- Color: Borders ---- */
+  --color-border-subtle:  rgba(255, 255, 255, 0.06);
+  --color-border-default: rgba(255, 255, 255, 0.10);
+  --color-border-strong:  rgba(255, 255, 255, 0.15);
+  --color-border-accent:  rgba(0, 229, 160, 0.30);
+
+  /* ---- Typography: Font Families ---- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ---- Border Radius ---- */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-glow-accent: 0 0 20px rgba(0, 229, 160, 0.20);
+  --shadow-glow-agent:  0 0 16px rgba(99, 102, 241, 0.25);
+
+  /* ---- Layout ---- */
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --content-max-width: 1440px;
+}
+
+/* ---- Base Styles ---- */
+body {
+  background-color: var(--color-bg-root);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Scrollbar Styling ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---- Animations ---- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+/* ---- Focus Styles ---- */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

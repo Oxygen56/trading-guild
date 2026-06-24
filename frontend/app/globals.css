@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --color-bg-root: #060B1A;
+  --color-bg-layer-1: #0A1128;
+  --color-bg-layer-2: #0F1A36;
+  --color-bg-card: #111D3A;
+  --color-bg-card-hover: #162244;
+  --color-bg-input: #0A1128;
+  --color-bg-modal: #0F1A36;
+  --color-bg-overlay: rgba(6, 11, 26, 0.85);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-default: rgba(255, 255, 255, 0.10);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+  --color-border-accent: rgba(0, 229, 160, 0.30);
+  --color-accent: #00E5A0;
+  --color-accent-hover: #00C48C;
+  --color-accent-muted: rgba(0, 229, 160, 0.12);
+  --color-accent-glow: rgba(0, 229, 160, 0.20);
+  --color-agent-strategy: #6366F1;
+  --color-agent-risk: #F59E0B;
+  --color-agent-execution: #06B6D4;
+  --color-agent-strategy-muted: rgba(99, 102, 241, 0.15);
+  --color-agent-risk-muted: rgba(245, 158, 11, 0.15);
+  --color-agent-execution-muted: rgba(6, 182, 212, 0.15);
+  --color-profit: #10B981;
+  --color-loss: #EF4444;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-success: #10B981;
+  --color-error: #EF4444;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary: #64748B;
+  --color-text-on-accent: #060B1A;
+  --color-text-inverse: #060B1A;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --content-max-width: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-root);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Chart tooltip override */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background-color: var(--color-bg-card) !important;
+  border: 1px solid var(--color-border-default) !important;
+  border-radius: 8px !important;
+}
+
+.recharts-default-tooltip .recharts-tooltip-label {
+  color: var(--color-text-secondary) !important;
+  margin-bottom: 4px !important;
+}
+
+.recharts-default-tooltip .recharts-tooltip-item {
+  color: var(--color-text-primary) !important;
+}
+
+/* Pulse animation for agent status */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(0, 229, 160, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 229, 160, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Fade in animation for cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Slide in from right for toasts */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-out forwards;
+}

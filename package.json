@@ -17,6 +17,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
     "@modelcontextprotocol/sdk": "^1.8.0",
+    "casper-js-sdk": "^5.0.12",
     "dotenv": "^16.4.7",
     "zod": "^3.24.2"
   },

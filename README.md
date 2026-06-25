@@ -179,6 +179,9 @@ trading-guild/
 │   ├── design-tokens.css        # CSS custom properties (colors, spacing, shadows, animations)
 │   └── demo-video-guide.md      # Video recording guide and storyboard
 ├── demo-video-script.md          # 4-minute demo video narrative script
+├── scripts/                      # Casper Testnet transaction scripts
+│   ├── casper-tx.cjs             # Key gen + CSPR transfer tx (sign & broadcast)
+│   └── casper-fund.cjs           # Fund a demo key from existing wallet
 ├── package.json
 ├── tsconfig.json
 ├── .env.example
@@ -218,7 +221,7 @@ Edit `.env` with your credentials:
 ANTHROPIC_API_KEY=sk-ant-...
 
 # Casper Testnet
-CASPER_RPC_URL=https://rpc.testnet.casper.network
+CASPER_RPC_URL=https://node.testnet.casper.network/rpc
 CASPER_CHAIN_NAME=casper-test
 CSPR_CLOUD_API_KEY=your_cspr_cloud_key
 
@@ -267,6 +270,29 @@ Open [http://localhost:3000](http://localhost:3000). The dashboard shows:
 ### Run with Real AI (Claude API)
 
 Set `ANTHROPIC_API_KEY` in your `.env` and ensure `NEXT_PUBLIC_CASPER_USE_MOCK=false`. Agents will use Claude's tool-use capability with actual MCP server connections for market data and trade execution.
+
+---
+
+## 🏆 Casper Testnet — On-Chain Transaction Proof
+
+**Buildathon Qualification Requirement: ✅ COMPLETE**
+
+A real CSPR transfer was executed programmatically on Casper Testnet using `casper-js-sdk` v5.0.12 with the Condor Transaction V1 model.
+
+| Field | Value |
+|-------|-------|
+| **Transaction Hash** | `7d46379003b0c0ff2f40e2ae56b544d6d3f3397e315f9f85f96ecb18d341f7ec` |
+| **Block Height** | 8,295,259 |
+| **Network** | Casper Testnet (`casper-test`, api v2.0.0) |
+| **From** | `0137537f35cf2f9e271a7b1c91576720f312f761f8c0d6091bf529bd0dba73bfbb` |
+| **To** | `019c3d1ada3cd4b2a1e49bcc5a1a79c0786c1de359ee290f779710033cf3f844d8` |
+| **Amount** | 2.5 CSPR |
+| **Gas Paid** | 0.1 CSPR |
+| **Status** | ✅ Success |
+
+**Explorer:** [View on CSPR.Live](https://testnet.cspr.live/deploy/7d46379003b0c0ff2f40e2ae56b544d6d3f3397e315f9f85f96ecb18d341f7ec)
+
+The transaction script (`scripts/casper-tx.cjs`) handles key generation, persistence, RPC connection, transaction construction, signing, and broadcasting — all programmatically without any browser wallet.
 
 ---
 

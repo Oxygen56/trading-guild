@@ -368,7 +368,7 @@ A 4-minute walkthrough of the full business flow is available:
 
 ## Team
 
-Built by **jiangth99** for the Casper Agentic Buildathon 2026.
+Built by **Oxygen56** for the Casper Agentic Buildathon 2026.
 
 Special thanks to the open-source projects that made this possible:
 - [Casper Network](https://casper.network) — L1 blockchain with native AI agent support
@@ -380,6 +380,6 @@ Special thanks to the open-source projects that made this possible:
 
 ## License
 
-MIT © 2026 jiangth99
+MIT © 2026 Oxygen56
 
 See [LICENSE](LICENSE) for full terms.
